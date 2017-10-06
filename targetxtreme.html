@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<hmtl>
+<head>
+    
+<title>Target XTREME</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(1080, 1920); 
+        
+frameRate(1000);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  
+var u = 209;
+var x = 123;
+var y = 169;
+var o = 640;
+var walllenght = 250;
+var speed1 = 100;
+var speed2 = 200; 
+var speed = 0;
+    var t = 174;
+    var draw = function() {
+
+ 
+
+    background(0, 17, 255);
+    textSize(3000);
+    fill(145, 139, 145);
+    text ("X",-500,2000);
+    fill (0);
+    var arrow = rect(x - 150 ,o,300,20);
+        //black 1pt.
+        fill(0);
+        rect(900,y - 100, 50, 400);
+        //blue 2pt.
+        fill(0, 0, 255);
+        rect(900, y - 25, 50, 250);
+        //yellow 3pt.
+        fill(255, 255, 0);
+        rect(900, y + 50, 50, 100);
+        //red 4 pt.
+        fill(255,0,0);
+        rect(900, y + 85, 50, 25); 
+        
+
+ mouseClicked = function ( ){speed = 100;};
+      
+         x = x + speed;
+          
+     mousePressed = function () { speed1 = 0; };
+      if ( y  >  1600) { speed1 = -35 ;}
+      if ( y  < 60) { speed1 = 35;}
+      if ( x > u  ){speed2 = 0 ; }
+      if ( x === 5000 ){speed1 = 0;}  
+      if (x > 825 ) { speed = 0;}
+  
+      
+      y = y + speed1;
+      t = t + speed2;
+    };
+    
+//YOUR JS PROGRAM CODE ENDS HERE.
+}};  
+// Get the canvas that Processing-js will use
+    
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+</html>
